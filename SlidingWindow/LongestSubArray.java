@@ -1,4 +1,4 @@
-package ArraysAndStrings;
+package SlidingWindow;
 
 /*
  * given an array of length n, find the longest subarray
