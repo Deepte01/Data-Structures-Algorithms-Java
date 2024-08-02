@@ -23,6 +23,17 @@ public class RemoveDuplicates {
         It does not matter what you leave beyond the returned k (hence they are underscores).
 
      */
+    static int removeDuplicatesWithoutHasMap(int [] arr)
+    {
+        int i=0;
+        for(int j=1;j<arr.length;j++){
+            if(arr[i]!=arr[j]){
+                i++;
+                arr[i]=arr[j];
+            }
+        }
+        return i+1;
+    }
     static int removeDuplicates(int[] nums) {
         // I have used a two pointer approach.
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -52,5 +63,6 @@ public class RemoveDuplicates {
     public static void main(String args[])
     {
         System.out.println(removeDuplicates(new int[]{0,0,1,1,1,2,2,3,3,4}));  
+        System.out.println(removeDuplicatesWithoutHasMap(new int[]{0,0,1,1,1,2,2,3,3,4}));  
     }
 }
