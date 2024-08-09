@@ -24,7 +24,18 @@ Explanation: In this case, no transactions are done and the max profit = 0.
 
      */
     static int maxProfit(int[] prices) {
-        return 1;
+        int profit = 0;
+        for(int i =0; i< prices.length ; i++)
+        {
+           for(int j = i+1;j < prices.length; j++)
+           {
+              if(prices[i] < prices[j])
+              {
+                profit = Math.max(profit, prices[j]- prices[i]);
+              }
+           }
+        }
+        return profit;
     }
     public static void main(String args[])
     {
