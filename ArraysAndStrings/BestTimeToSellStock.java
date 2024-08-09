@@ -37,6 +37,22 @@ Explanation: In this case, no transactions are done and the max profit = 0.
         }
         return profit;
     }
+    static int maxProfitSolution2(int[] prices) {
+        int maxProfit = Integer.MAX_VALUE;
+        int op = 0;
+        int pist = 0;
+        
+        for(int i = 0; i < prices.length; i++){
+            if(prices[i] < maxProfit){
+                maxProfit = prices[i];
+            }
+            pist = prices[i] - maxProfit;
+            if(op < pist){
+                op = pist;
+            }
+        }
+        return op;
+    }
     public static void main(String args[])
     {
         System.out.println(maxProfit(new int[]{3,2,3}));  
