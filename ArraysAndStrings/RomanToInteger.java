@@ -31,6 +31,8 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
                 case 'D': num = 500; break;
                 case 'M': num = 1000; break;
             }
+            if (4 * num < ans) ans -= num;
+            else ans += num;
         }
         return ans;
     }
