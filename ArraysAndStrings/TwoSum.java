@@ -19,7 +19,7 @@ Output: [0,1]
 Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 
      */
-        public int[] twoSum(int[] nums, int target) {
+    public int[] twoSum(int[] nums, int target) {
         HashMap<Integer,Integer> map = new HashMap<>();
         int[] res = new int[2];
         for(int i=0;i<nums.length;i++){
@@ -32,4 +32,16 @@ Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
         }
         return res;
     }
+    public int[] twoSumSolution2(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return null;
+    }
+
+
 }
