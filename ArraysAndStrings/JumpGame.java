@@ -1,3 +1,5 @@
+package ArraysAndStrings;
+
 public class JumpGame {
     /*
      * You are given an integer array nums. You are initially positioned at the
@@ -19,4 +21,13 @@ public class JumpGame {
      * Its maximum jump length is 0, which makes it impossible to reach the last
      * index.
      */
+    public boolean canJump(int[] nums) {
+        int reachable = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (i > reachable)
+                return false;
+            reachable = Math.max(reachable, i + nums[i]);
+        }
+        return true;
+    }
 }
